@@ -58,7 +58,6 @@ fun FormSiswa(
                 placeholder = { Text(text = "Masukkan Nama") }
             )
 
-            // Sesuai foto, ada Divider atau Spacer setelah TextField
             Spacer(modifier = Modifier.padding(8.dp))
             // Atau bisa pakai Divider jika mau garis:
             // HorizontalDivider(modifier = Modifier.padding(vertical = 12.dp))
