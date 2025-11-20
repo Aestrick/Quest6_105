@@ -51,7 +51,7 @@ fun FormSiswa(
             OutlinedTextField(
                 value = txtNama,
                 onValueChange = { txtNama = it },
-                label = { Text(text = "Nama Lengkap") }, // Atau stringResource(R.string.nama)
+                label = { Text(text = "Nama Lengkap") },
                 singleLine = true,
                 shape = MaterialTheme.shapes.medium,
                 modifier = Modifier.fillMaxWidth().padding(top = 20.dp),
