@@ -8,7 +8,9 @@ Berikut adalah tampilan aplikasi:
 
 | Halaman Formulir Input | Halaman Tampilan Data |
 |:----------------------:|:---------------------:|
-| <img src="screenshot_form.png" width="300" /> | <img src="screenshot_hasil.png" width="300" /> |
+| <img width="470" height="811" alt="screenshot_form png" src="https://github.com/user-attachments/assets/4ac06274-de42-4d79-a984-490a84d3dbf4" /> | <img width="474" height="818" alt="screenshot_hasil" src="https://github.com/user-attachments/assets/9e585c46-a0ce-4c66-9334-fb3db4f23ba5" /> |
+
+
 | *User mengisi data diri (Nama, Gender, Alamat)* | *Data ditampilkan setelah tombol Submit ditekan* |
 
 ## 🚀 Fitur Utama
