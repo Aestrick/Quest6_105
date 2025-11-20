@@ -21,7 +21,6 @@ fun FormSiswa(
     onSubmitButtonClicked: (MutableList<String>) -> Unit,
     modifier: Modifier = Modifier
 ) {
-    // Edit 2: Tambahkan 4 variable dibawah ini (sesuai foto)
     var txtNama by rememberSaveable { mutableStateOf("") }
     var txtAlamat by remember { mutableStateOf("") }
     var txtGender by remember { mutableStateOf("") }
