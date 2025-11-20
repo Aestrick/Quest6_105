@@ -93,7 +93,7 @@ fun FormSiswa(
                 placeholder = { Text(text = "Masukkan Alamat") }
             )
 
-            Spacer(modifier = Modifier.height(20.dp)) // Sesuai foto terakhir (height=20.dp)
+            Spacer(modifier = Modifier.height(20.dp))
 
             // Edit 4: Menambahkan variabel List Data pada onClick (sesuai foto)
             Button(
