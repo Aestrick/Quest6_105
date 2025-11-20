@@ -1,7 +1,9 @@
 package com.example.pertemuan8.view
 
+import androidx.compose.foundation.background // Import ini
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -30,7 +32,6 @@ fun TampilSiswa(
     onBackButtonClicked: () -> Unit,
     modifier: Modifier = Modifier
 ) {
-    // Kita buat list data agar kode tampilan lebih ringkas dan rapi
     val items = listOf(
         Pair(stringResource(id = R.string.nama), statusUiSiswa.nama),
         Pair(stringResource(id = R.string.gender), statusUiSiswa.gender),
@@ -54,32 +55,27 @@ fun TampilSiswa(
             modifier = Modifier
                 .padding(isiRuang)
                 .fillMaxSize()
+                .background(Color.White) // <-- INI FIX NYA: Paksa background putih
                 .padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
-            // Loop untuk menampilkan setiap item data
             items.forEach { item ->
                 Column {
-                    // Label (misal: Nama Lengkap) - Warna Abu
                     Text(
-                        text = item.first,
-                        color = Color.Gray
+                        text = item.first.uppercase(), // Label uppercase biar mirip foto
+                        color = Color.Gray // Warna label abu-abu
                     )
-                    // Isi Data (misal: Isinya) - Tebal & Hitam
                     Text(
                         text = item.second,
                         fontWeight = FontWeight.Bold,
-                        color = Color.Black
+                        color = Color.Black // Warna isi data HITAM PEKAT
                     )
-                    // Garis pemisah di bawah setiap data
                     Divider(modifier = Modifier.padding(top = 8.dp))
                 }
             }
 
-            // Spacer ini mendorong tombol ke paling bawah layar
             Spacer(modifier = Modifier.weight(1f))
 
-            // Tombol Kembali (Back)
             Button(
                 onClick = onBackButtonClicked,
                 modifier = Modifier.fillMaxWidth()
