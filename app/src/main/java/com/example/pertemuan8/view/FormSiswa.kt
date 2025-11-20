@@ -48,7 +48,6 @@ fun FormSiswa(
                 .padding(16.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            // Edit 3: value, onValueChange, selected, onClick (sesuai foto)
             OutlinedTextField(
                 value = txtNama,
                 onValueChange = { txtNama = it },
