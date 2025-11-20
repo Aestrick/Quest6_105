@@ -1,4 +1,4 @@
-package com.example.pertemuan8.view // Sesuaikan package-mu
+package com.example.pertemuan8.view
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.selection.selectable
@@ -21,7 +21,7 @@ fun FormSiswa(
     onSubmitButtonClicked: (MutableList<String>) -> Unit,
     modifier: Modifier = Modifier
 ) {
-    // Edit 2: Tambahkan variabel di bawah ini
+    // Edit 2: Tambahkan 4 variable dibawah ini (sesuai foto)
     var txtNama by rememberSaveable { mutableStateOf("") }
     var txtAlamat by remember { mutableStateOf("") }
     var txtGender by remember { mutableStateOf("") }
@@ -33,13 +33,11 @@ fun FormSiswa(
         topBar = {
             TopAppBar(
                 title = {
-                    Text(
-                        text = stringResource(id = R.string.app_name),
-                        color = Color.White
-                    )
+                    Text(text = stringResource(id = R.string.app_name))
                 },
                 colors = TopAppBarDefaults.mediumTopAppBarColors(
-                    containerColor = colorResource(id = R.color.purple_500)
+                    containerColor = colorResource(id = R.color.purple_500),
+                    titleContentColor = Color.White
                 )
             )
         }
@@ -51,20 +49,22 @@ fun FormSiswa(
                 .padding(16.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            // Edit 3: Input Nama
+            // Edit 3: value, onValueChange, selected, onClick (sesuai foto)
             OutlinedTextField(
                 value = txtNama,
                 onValueChange = { txtNama = it },
-                label = { Text(text = stringResource(id = R.string.nama)) },
-                placeholder = { Text(text = "Nama Lengkap") },
+                label = { Text(text = "Nama Lengkap") }, // Atau stringResource(R.string.nama)
                 singleLine = true,
                 shape = MaterialTheme.shapes.medium,
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier.fillMaxWidth().padding(top = 20.dp),
+                placeholder = { Text(text = "Masukkan Nama") }
             )
 
-            Spacer(modifier = Modifier.height(16.dp))
+            // Sesuai foto, ada Divider atau Spacer setelah TextField
+            Spacer(modifier = Modifier.padding(8.dp))
+            // Atau bisa pakai Divider jika mau garis:
+            // HorizontalDivider(modifier = Modifier.padding(vertical = 12.dp))
 
-            // Input Gender (Radio Button)
             Row(
                 modifier = Modifier.fillMaxWidth()
             ) {
@@ -76,7 +76,6 @@ fun FormSiswa(
                                 selected = txtGender == item,
                                 onClick = { txtGender = item }
                             )
-                            .padding(end = 16.dp)
                     ) {
                         RadioButton(
                             selected = txtGender == item,
@@ -87,22 +86,21 @@ fun FormSiswa(
                 }
             }
 
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.padding(8.dp))
 
-            // Input Alamat
             OutlinedTextField(
                 value = txtAlamat,
                 onValueChange = { txtAlamat = it },
-                label = { Text(text = stringResource(id = R.string.alamat)) },
-                placeholder = { Text(text = "Alamat") },
+                label = { Text(text = "Alamat Lengkap") }, // Atau stringResource(R.string.alamat)
                 singleLine = true,
                 shape = MaterialTheme.shapes.medium,
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier.fillMaxWidth(),
+                placeholder = { Text(text = "Masukkan Alamat") }
             )
 
-            Spacer(modifier = Modifier.height(24.dp))
+            Spacer(modifier = Modifier.height(20.dp)) // Sesuai foto terakhir (height=20.dp)
 
-            // Tombol Submit
+            // Edit 4: Menambahkan variabel List Data pada onClick (sesuai foto)
             Button(
                 onClick = { onSubmitButtonClicked(listData) },
                 modifier = Modifier.fillMaxWidth()
